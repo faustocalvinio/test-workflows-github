@@ -1,1 +1,1 @@
-console.log('This is the index.js file for the project.');
+console.log('This is the index.js file');
