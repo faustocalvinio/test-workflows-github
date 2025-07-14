@@ -1,20 +1,15 @@
-name: Say hello
+name: PR Opened Test
 
 on:
-  push:
-    branches:
-      - main
-  pull-request:
-    branches:
-      - main
+  pull_request:
+    types: [opened]
 
 jobs:
-  hello_world:
-    runs-on: ubuntu-24.04
+  test:
+    runs-on: ubuntu-latest
     steps:
-      - name: Echo the message
-        run: |
-          echo "Hola midu!"
-      - name: Dime la fecha
-        run: date
-      - run: ls -l
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run a test command
+        run: echo "Pull request opened! Running tests..."
